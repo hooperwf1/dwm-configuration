@@ -8,7 +8,7 @@ static const unsigned int gappov    = 10;       /* vert outer gap between window
 static const int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "Ubuntu mono-11:antialias=true:bold" };
+static const char *fonts[]          = { "Ubuntu mono-11:antialias=true:bold", "Noto Color Emoji:size=11" };
 static const char dmenufont[]       = "Ubuntu mono-11:antialias=true:bold";
 static const char col_green[]       = "#98971a";
 static const char col_blue[]        = "#458588";
@@ -67,6 +67,7 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_t,      spawn,          SHCMD("st -A 0.9") },
+	{ MODKEY,	                XK_e,      spawn,          SHCMD("/homeDrive/scripts/scriptsBASH/keyboard-layout.sh") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
