@@ -1,3 +1,5 @@
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -67,7 +69,12 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,	                XK_t,      spawn,          SHCMD("st -A 0.9") },
-	{ MODKEY,	                XK_e,      spawn,          SHCMD("keyboard-layout.sh") },
+	{ MODKEY,	                XK_e,      spawn,          SHCMD("/homeDrive/scripts/scriptsBASH/status-bar/toggle-key-layout.sh") },
+	{ MODKEY|ShiftMask,             XK_i,      spawn,          SHCMD("/homeDrive/scripts/scriptsBASH/brightness.sh 100") },
+	{ MODKEY|ShiftMask,             XK_u,      spawn,          SHCMD("/homeDrive/scripts/scriptsBASH/brightness.sh -100") },
+	{ NULL,             XF86XK_AudioLowerVolume,     spawn,    SHCMD("/homeDrive/scripts/scriptsBASH/status-bar/change-volume.sh -5") },
+	{ NULL,             XF86XK_AudioRaiseVolume,     spawn,    SHCMD("/homeDrive/scripts/scriptsBASH/status-bar/change-volume.sh +5") },
+	{ NULL,             XF86XK_AudioMute,      spawn,          SHCMD("/homeDrive/scripts/scriptsBASH/status-bar/change-volume.sh 0") },
 	{ MODKEY,                       XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
 	{ MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
